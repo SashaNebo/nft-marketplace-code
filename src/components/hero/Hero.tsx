@@ -41,7 +41,7 @@ const Hero: FC = () => {
             <h5 className='text-work-h5'>Space Walking</h5>
             <div className={cn['highlighted__person']}>
               <div className={cn['highlighted__person-avatar']}>
-                <img src='../../../src/assets/images/avatar/animakid.png' alt='' />
+                <img src='../src/assets/images/avatar/animakid.png' alt='' />
               </div>
               <div className='text-work-body'>Animakid</div>
             </div>

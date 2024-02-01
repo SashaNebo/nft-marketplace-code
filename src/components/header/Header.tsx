@@ -8,7 +8,7 @@ const Header: FC = () => {
     <header className={cn['header']}>
       <div className={cn['header__container']}>
         <div className={cn['header__logo']}>
-          <svg className={cn.icon}>
+          <svg className={cn['icon']}>
             <use href={`${spritePath.buttonIcons}#storeFront`}></use>
           </svg>
           <h5 className='text-space-h5'>NFT Marketplace</h5>

@@ -20,10 +20,18 @@ const Button: FC<ButtonProps> = ({ text, type, size, icon, className }) => {
     }[size]
   )
 
+  const iconStyles = clsx(
+    cn.icon,
+    {
+      primary: cn['primary-i'],
+      secondary: cn['secondary-i'],
+    }[type]
+  )
+
   return (
     <button className={buttonStyles}>
       {icon && (
-        <svg className={cn.icon}>
+        <svg className={iconStyles}>
           <use href={`${spritePath.buttonIcons}#${icon}`}></use>
         </svg>
       )}
