@@ -22,7 +22,8 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+hr {
   margin: 0
 }
 
@@ -66,8 +67,6 @@ img {
 ::placeholder {
   color: unset;
 }
-
-/* ClassNames */
 
 svg {
   width: 32px;

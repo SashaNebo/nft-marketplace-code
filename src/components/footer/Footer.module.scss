@@ -48,10 +48,15 @@
     &-icon {
       fill: var(--color-gray);
       cursor: pointer;
+      transition: var(--transition-scale);
 
       &:nth-child(3) {
         fill: transparent;
         stroke: var(--color-gray);
+      }
+
+      &:hover {
+        transform: var(--transform-scale);
       }
     }
   }

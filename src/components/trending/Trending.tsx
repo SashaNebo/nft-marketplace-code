@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import cn from './Trending.module.scss'
+import Creator from '../UI/creator/Creator'
 
 const Trending: FC = () => {
   const data: number[] = [...new Array(3)].map((_, i) => i)
@@ -32,15 +33,11 @@ const Trending: FC = () => {
               </div>
             </div>
 
-            <div className={cn['collection-card__info']}>
-              <h5 className='text-work-h5'>Space Walking</h5>
-              <div className={cn['collection-card__author']}>
-                <div className={cn['collection-card__avatar']}>
-                  <img src='../src/assets/images/avatar/animakid.png' alt='' />
-                </div>
-                <div className='text-work-body'>Animakid</div>
-              </div>
-            </div>
+            <Creator
+              title='Distant Galaxy'
+              nickName='Azuki'
+              avatarUrl='https://assets.raribleuserdata.com/prod/v1/image/t_avatar_big/aHR0cHM6Ly9pcGZzLnJhcmlibGV1c2VyZGF0YS5jb20vaXBmcy9RbWJKaXQxYTlKcDM1RDJBWmRpVGRmTG42SkNYUVNibjFMdzIzN3FaV2ZDTWZl'
+            />
           </div>
         ))}
       </div>

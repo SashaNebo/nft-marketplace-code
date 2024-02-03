@@ -1,21 +1,13 @@
 import { FC } from 'react'
-import Header from './components/header/Header'
-import Hero from './components/hero/Hero'
-import Footer from './components/footer/Footer'
-import Trending from './components/trending/Trending'
-import TopCreators from './components/topCreators/TopCreators'
+import { BrowserRouter } from 'react-router-dom'
+
+import AppRouter from './components/appRouter/AppRouter'
 
 const App: FC = () => {
   return (
-    <div className='app'>
-      <Header />
-      <div className='wrapper'>
-        <Hero />
-        <Trending />
-        <TopCreators />
-      </div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   )
 }
 

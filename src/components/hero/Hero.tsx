@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import cn from './Hero.module.scss'
 import Button from '../UI/buttons/Button'
+import Creator from '../UI/creator/Creator'
 
 const Hero: FC = () => {
   return (
@@ -35,16 +36,19 @@ const Hero: FC = () => {
             </div>
           </div>
         </div>
-        <div className={cn['highlighted']}>
-          <div className={cn['highlighted__img']}></div>
-          <div className={cn['highlighted__block']}>
-            <h5 className='text-work-h5'>Space Walking</h5>
-            <div className={cn['highlighted__person']}>
-              <div className={cn['highlighted__person-avatar']}>
-                <img src='../src/assets/images/avatar/animakid.png' alt='' />
-              </div>
-              <div className='text-work-body'>Animakid</div>
-            </div>
+        <div className={[cn['highlighted'], 'animation-scale'].join(' ')}>
+          <div className={cn['highlighted__img']}>
+            <img
+              src='https://lh3.googleusercontent.com/OorUjpgFH431fea7KNFDwluhvVYICpJlryRwUNsuWs4GIfbNSlGMMESrxFPjxuSVCPonO4j3Y4bIf6BaBzyr-_4xJQKuTFUmQMk=s400'
+              alt=''
+            />
+          </div>
+          <div className={cn['highlighted__wrapper']}>
+            <Creator
+              title='Space Walking'
+              nickName='Animakid'
+              avatarUrl='../src/assets/images/avatar/animakid.png'
+            />
           </div>
         </div>
       </div>
