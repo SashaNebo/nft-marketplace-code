@@ -30,7 +30,7 @@ export type ResultType = {
 }
 
 export type RankingDataType = {
-  [address: string]: string
+  [id: string]: string
   logo: string
   name: string
   itemsBought: string

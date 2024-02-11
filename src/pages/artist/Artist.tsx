@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import cn from './Artist.module.scss'
 import Button from '../../components/UI/buttons/Button'
 import { spritePath } from '../../helpers/pathIcons'
@@ -7,6 +7,10 @@ import Nfts from '../../components/nfts/Nfts'
 
 const Artist: FC = () => {
   const data = [...new Array(9)].map((_, i) => i + 1)
+
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
   return (
     <main className={cn['artist']}>
       <div className={cn['artist__banner']}>

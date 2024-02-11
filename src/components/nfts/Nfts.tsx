@@ -3,13 +3,14 @@ import NftsList from './NftsList'
 
 type NFTsProps = {
   nfts: number[]
+  bg?: 'dark' | 'gray'
 }
 
-const Nfts: FC<NFTsProps> = ({ nfts }) => {
+const Nfts: FC<NFTsProps> = ({ nfts, bg }) => {
   return (
     <div className='nfts'>
       <div className='container'>
-        <NftsList nfts={nfts} />
+        <NftsList nfts={nfts} bg={bg} />
       </div>
     </div>
   )

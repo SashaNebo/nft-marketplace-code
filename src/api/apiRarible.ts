@@ -11,9 +11,13 @@ const options = {
   },
 }
 
-export const getNFTCollectionsVolume = async (limit: number = 1, period: string = 'D30', continuation='') => {
+export const getNFTCollectionsVolume = async (
+  limit: number = 1,
+  period: string = 'D30',
+  continuation = ''
+) => {
   const nftQuery = 'data/rankings/collections/volume'
-  const params = `blockchain=ETHEREUM&period=${period}&sort=VOLUME_USD_DESC&limit=${limit}`
+  const params = `period=${period}&sort=VOLUME_USD_DESC&limit=${limit}`
   const continuationString = continuation ? `&continuation=${continuation}` : ''
   const url = `${baseUrl}/${nftQuery}?${params}${continuationString}`
   const data = await ky(url, options).json()

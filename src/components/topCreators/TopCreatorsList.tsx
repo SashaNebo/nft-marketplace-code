@@ -7,6 +7,7 @@ import { anFadeInEls } from '../../helpers/animation.js'
 import { useRankingFetch2 } from '../../hooks/useRankingFetch.ts'
 import { Period, RankingDataType, ResultType, SettingsType } from '../../types/rankingTypes.ts'
 import useRankingInfo from '../../hooks/useRankingInfo.ts'
+import { getRankingRouterLink } from '../../helpers/utils.ts'
 
 const TopCreatorsList: FC = () => {
   const settings: SettingsType = {
@@ -16,12 +17,18 @@ const TopCreatorsList: FC = () => {
   }
 
   const rankingData: RankingDataType[] | ResultType[] = useRankingFetch2(settings)
-  const rankingInfo = useRankingInfo(rankingData)
+  const rankingInfo: (key: string, index: number) => string = useRankingInfo(rankingData)
+
+  const renderData = rankingData.length
+    ? rankingData
+    : [...new Array(settings.quantityData)].map((_, i) => i)
+
+  const routerLink = getRankingRouterLink(rankingInfo)
 
   return (
     <>
-      {rankingData.map((_, i) => (
-        <Link to={`artist/${i + 1}`} key={i}>
+      {renderData.map((_, i) => (
+        <Link to={routerLink(i)} key={i}>
           <motion.div
             variants={anFadeInEls}
             custom={i + 1}

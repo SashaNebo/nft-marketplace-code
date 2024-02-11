@@ -13,7 +13,7 @@ const TopCreatorsHeader: FC = () => {
           Checkout Top Rated Creators on the NFT Marketplace
         </h5>
       </div>
-      <Link to={'/rankings'}>
+      <Link className={cn['top-creators__header-link']} to={'/rankings'}>
         <Button
           className={cn['top-creators__header-button']}
           type='secondary'

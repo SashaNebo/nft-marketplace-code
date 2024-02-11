@@ -1,14 +1,16 @@
 import { RankingDataType, ResultType } from '../types/rankingTypes'
 
 type Placeholder = {
-  [name: string]: string
+  id: string
+  name: string
   logo: string
   volume: string
   priceValue: string
   pricePercent: string
-  itemsBought: string
+  [itemsBought: string]: string
 }
 const placeholder: Placeholder = {
+  id: '',
   name: 'Creator',
   logo: '../../../src/assets/images/avatar/robot.svg',
   volume: '0.00',
@@ -28,9 +30,10 @@ const useRankingInfo = (rankingData: RankingDataType[] | ResultType[]) => {
 }
 
 function takeRankingInfo(array: RankingDataType[], key: string, i: number): string {
-  const obj = array[i]
+  const obj: RankingDataType = array[i]
   const ph = placeholder[key]
 
+  const getId = () => obj?.id ?? ph
   const getName = () => obj?.name ?? ph
   const getLogo = () => obj?.logo ?? ph
   const getVolume = () => obj?.volume ?? ph
@@ -39,6 +42,7 @@ function takeRankingInfo(array: RankingDataType[], key: string, i: number): stri
   const getItemsBought = () => obj?.itemsBought ?? ph
 
   const list: () => string = {
+    id: getId,
     name: getName,
     logo: getLogo,
     volume: getVolume,

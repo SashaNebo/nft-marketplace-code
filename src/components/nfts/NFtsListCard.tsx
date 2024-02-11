@@ -2,9 +2,13 @@ import { FC } from 'react'
 import cn from './Nfts.module.scss'
 import Creator from '../UI/creator/Creator'
 
-const NFtsListCard: FC = () => {
+type NFtsListCardProps = {
+  bg?: 'dark' | 'gray'
+}
+
+const NFtsListCard: FC<NFtsListCardProps> = ({ bg }) => {
   return (
-    <div className={[cn['card'], 'animation-scale'].join(' ')}>
+    <div className={[cn['card'], cn[`${bg}`], 'animation-scale'].join(' ')}>
       <div className={cn['card__picture']}>
         <img src='https://lh3.googleusercontent.com/Ab7HDdUjyDxebvF2PYuMhuAaCYM6t5XoFFS3_axBGHjHHWtJn5fHpVwDLCFFhCfulI0t_atk8DXQ4WP4lFfrKl5wZ9zrdIUqPf0=s400' />
       </div>

@@ -84,9 +84,9 @@
     </g>
   </symbol>
 
-  <!-- envelopeSimple -->
+  <!-- message -->
 
-  <symbol id="envelopeSimple" viewBox="0 0 32 32">
+  <symbol id="message" viewBox="0 0 32 32">
     <g>
       <path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd"
         d="M3 7C3 6.44772 3.44772 6 4 6H28C28.5523 6 29 6.44772 29 7V24C29 24.5304 28.7893 25.0391 28.4142 25.4142C28.0391 25.7893 27.5304 26 27 26H5C4.46957 26 3.96086 25.7893 3.58579 25.4142C3.21071 25.0391 3 24.5304 3 24V7ZM5 8V24H27V8H5Z"

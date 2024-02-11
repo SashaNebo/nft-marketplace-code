@@ -4,13 +4,14 @@ import NFtsListCard from './NFtsListCard'
 
 type NFTsListProps = {
   nfts: number[]
+  bg?: 'dark' | 'gray'
 }
 
-const NftsList: FC<NFTsListProps> = ({ nfts }) => {
+const NftsList: FC<NFTsListProps> = ({ nfts, bg }) => {
   return (
     <div className={cn['nfts-list']}>
-      {nfts.map(nft => (
-        <NFtsListCard key={nft} />
+      {nfts.map((_, i) => (
+        <NFtsListCard key={i} bg={bg} />
       ))}
     </div>
   )

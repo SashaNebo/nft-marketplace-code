@@ -55,6 +55,6 @@ function updateCreators({ result }: AddressesVolume, setCreators) {
   })
 
   setTimeout(() => {
-    setCreators((prevCreators: RankingDataType[]) => [...prevCreators, ...creatorsList])
+    setCreators(() => creatorsList)
   }, 1000)
 }
