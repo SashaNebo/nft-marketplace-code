@@ -1,11 +1,36 @@
 import { FC, useState } from 'react'
-import cn from './Rankings.module.scss'
-import RankingsList from './RankingsList'
 import clsx from 'clsx'
 
+import cn from './Rankings.module.scss'
+import RankingsList from './RankingsList'
+import { Period, PeriodActionList } from '../../types/rankingTypes'
+
 const Rankings: FC = () => {
-  const [time, setTime] = useState<string>('Today')
-  const data = ['Today', 'This Week', 'This Month', 'All Time']
+  const [period, setPeriod] = useState<PeriodActionList>(Period.today)
+
+  type TimeListType = {
+    id: PeriodActionList
+    text: string
+  }
+
+  const timeList: TimeListType[] = [
+    {
+      id: Period.today,
+      text: 'Today',
+    },
+    {
+      id: Period.week,
+      text: 'This Week',
+    },
+    {
+      id: Period.mounth,
+      text: 'This Month',
+    },
+    {
+      id: Period.all,
+      text: 'All Time',
+    },
+  ]
 
   return (
     <main className={cn['rankings']}>
@@ -16,17 +41,17 @@ const Rankings: FC = () => {
         </h5>
 
         <div className={cn['tabs']}>
-          {data.map(e => (
+          {timeList.map(({ id, text }) => (
             <div
-              onClick={() => setTime(e)}
-              key={e}
-              className={clsx(cn['tabs-time'], time === e && cn['active'])}>
-              <p className='text-work-h5'>{e}</p>
+              onClick={() => setPeriod(id)}
+              key={id}
+              className={clsx(cn['tabs-time'], period === id && cn['active'])}>
+              <p className='text-work-h5'>{text}</p>
             </div>
           ))}
         </div>
 
-        <RankingsList />
+        <RankingsList period={period} />
       </div>
     </main>
   )

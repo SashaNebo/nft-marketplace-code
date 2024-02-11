@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import cn from './Trending.module.scss'
 import Creator from '../UI/creator/Creator'
 

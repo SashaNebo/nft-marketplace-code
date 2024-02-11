@@ -47,6 +47,10 @@
     background-color: var(--bg-gray);
     border-radius: 20px;
     padding: 20px;
+
+    & h5 {
+      text-align: center;
+    }
   }
 
   &__number {
@@ -78,6 +82,9 @@
 
     &-img {
       border-radius: 100%;
+      width: 120px;
+      height: 120px;
+      object-fit: fill;
     }
   }
 
@@ -88,7 +95,8 @@
   &__total-sales {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    flex-direction: column;
+    row-gap: 5px;
     margin-top: 5px;
 
     & p:first-child {
