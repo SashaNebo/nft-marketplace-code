@@ -97,6 +97,7 @@
 
     & img {
       height: 60px;
+      width: 60px;
     }
   }
 }
@@ -109,4 +110,13 @@
   &__change {
     color: #00AC4F;
   }
+}
+
+.green {
+  color: rgb(40, 184, 51);
+
+}
+
+.red {
+  color: rgb(170 0 0);
 }

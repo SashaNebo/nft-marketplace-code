@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import cn from './Loader.module.scss'
 
-const LoaderXl: FC = () => {
+const LoaderSmall: FC = () => {
   return (
     <div className={cn['loader-xl']}>
       <img
@@ -13,4 +13,4 @@ const LoaderXl: FC = () => {
   )
 }
 
-export default LoaderXl
+export default LoaderSmall
