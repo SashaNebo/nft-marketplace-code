@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import cn from './TopCollections.module.scss'
-import { TOP_COLLECTIONS } from '../../types/topCollectionsTypes'
+import { TOP_COLLECTIONS } from '../../types/componentsTypes/topCollectionsTypes'
 import { toCollectVerifiedData } from '../../utils/collectVerifiedData'
 
 type PROPS = {
@@ -11,7 +11,8 @@ type PROPS = {
 }
 
 const TopCollectionsListItem: FC<PROPS> = ({ collection, number }) => {
-  const { address, collectionName, logoUrl, volumeETH } = toCollectVerifiedData(collection)
+  const { address, collectionName, logoUrl, volumeETH } =
+    toCollectVerifiedData<TOP_COLLECTIONS>(collection)
 
   return (
     <Link to={`/collection/${address}`}>

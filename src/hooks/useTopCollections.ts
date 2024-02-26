@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { SETTINGS_TC, TOP_COLLECTIONS } from '../types/topCollectionsTypes'
+import { SETTING_TC, TOP_COLLECTIONS } from '../types/componentsTypes/topCollectionsTypes'
 import { AlchemyAPI, RaribleAPI } from '../api'
-import { VOLUME_RESULT } from '../types/raribleTypes'
-import { CONTRACT_METADATA } from '../types/alchemyTypes'
+import { VOLUME_RESULT } from '../types/apiTypes/raribleTypes'
+import { CONTRACT_METADATA } from '../types/apiTypes/alchemyTypes'
+import { RETURN_HOOK } from './types'
 
-type RETURN = [TOP_COLLECTIONS[], boolean, string]
+type RETURN = RETURN_HOOK<TOP_COLLECTIONS[]>
 
-const useTopCollections = ({ limit, period }: SETTINGS_TC): RETURN => {
+const useTopCollections = ({ limit, period }: SETTING_TC): RETURN => {
   const [topCollections, setTopCollections] = useState<TOP_COLLECTIONS[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string>('')

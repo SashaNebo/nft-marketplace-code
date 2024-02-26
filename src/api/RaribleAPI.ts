@@ -1,5 +1,5 @@
 import ky from 'ky'
-import { PERIOD_CASES } from '../types/raribleTypes'
+import { PERIOD_CASES } from '../types/apiTypes/raribleTypes'
 
 const KEY = 'ba86ef0c-39be-48f9-91ce-2c2e9a30378e'
 const baseURL = 'https://api.rarible.org/v0.1'

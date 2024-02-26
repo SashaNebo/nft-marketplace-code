@@ -17,6 +17,8 @@ const verificationList: GENERAL_FUNC = {
   collectionName: v => v ?? PH.collectionName,
   logoUrl: v => v ?? PH.logoUrl,
   volumeETH: v => (v ? formattingNumbers(v) : PH.volumeETH),
+  floorPriceValue: v => v?.toFixed(2) ?? PH.floorPriceValue,
+  floorPricePercent: v => v?.toFixed(2) ?? PH.floorPricePercent,
 }
 
 const PH: GENERAL_STRING = {
@@ -24,6 +26,8 @@ const PH: GENERAL_STRING = {
   collectionName: 'Collection',
   logoUrl: img_PH.logo_PH,
   volumeETH: '00.00',
+  floorPriceValue: '-',
+  floorPricePercent: 'n',
 }
 
 export { toCollectVerifiedData }
