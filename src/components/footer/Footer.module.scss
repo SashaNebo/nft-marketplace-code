@@ -28,14 +28,15 @@
     display: flex;
     align-items: center;
     column-gap: 12px;
+    cursor: pointer;
   }
 
   &__link {
     font-family: var(--font-family-work);
     font-size: var(--fz-body);
     font-style: normal;
-    font-weight: var(--fw-400);
-    line-height: var(--lh-140);
+    font-weight: 400;
+    line-height: 140%;
     text-transform: none;
     color: #ccc;
   }
@@ -79,8 +80,8 @@
       font-family: var(--font-family-work);
       font-size: var(--fz-body);
       font-style: normal;
-      font-weight: var(--fw-400);
-      line-height: var(--lh-140);
+      font-weight: 400;
+      line-height: 140%;
       text-transform: none;
       color: var(--bg-dark);
     }
