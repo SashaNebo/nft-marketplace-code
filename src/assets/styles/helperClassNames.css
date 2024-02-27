@@ -138,3 +138,33 @@
   font-weight: 400;
   line-height: 110%;
 }
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 834px;
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    max-width: 690px;
+  }
+}
+
+@media (max-width: 834px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    max-width: 315px;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    max-width: 250px;
+  }
+}

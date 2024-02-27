@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { SETTING_TC, TOP_COLLECTIONS } from '../types/componentsTypes/topCollectionsTypes'
 import { AlchemyAPI, RaribleAPI } from '../api'
 import { VOLUME_RESULT } from '../types/apiTypes/raribleTypes'
-import { CONTRACT_METADATA } from '../types/apiTypes/alchemyTypes'
 import { RETURN_HOOK } from './types'
 
 type RETURN = RETURN_HOOK<TOP_COLLECTIONS[]>
@@ -15,7 +14,7 @@ const useTopCollections = ({ limit, period }: SETTING_TC): RETURN => {
   useEffect(() => {
     setIsLoading(() => true)
 
-    RaribleAPI.getNFTCollectionsvolume<VOLUME_RESULT>(period, limit)
+    RaribleAPI.getNFTCollectionsvolume(period, limit)
       .then(({ result }) => requestContractBatch(result))
       .catch(error => {
         setIsLoading(() => false)
@@ -29,9 +28,7 @@ const useTopCollections = ({ limit, period }: SETTING_TC): RETURN => {
       .map(({ id }) => id.split(':')[1])
 
     try {
-      const { contracts } = await AlchemyAPI.getContractMetadataBatch<CONTRACT_METADATA>(
-        addressesList
-      )
+      const { contracts } = await AlchemyAPI.getContractMetadataBatch(addressesList)
 
       const topCollectionsData: TOP_COLLECTIONS[] = contracts.map((contract, i) => ({
         address: contract.address,

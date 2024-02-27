@@ -28,7 +28,7 @@ const useRankings = (setting: SETTING_RANKINGS, trackedRef: REF): RETURN => {
 
     const timeout = setTimeout(async () => {
       try {
-        const collVolume = await RaribleAPI.getNFTCollectionsvolume<VOLUME_RESULT>(period, limit)
+        const collVolume = await RaribleAPI.getNFTCollectionsvolume(period, limit)
         setCollectionsVolume(() => collVolume)
       } catch (error) {
         setError(() => String(error))
@@ -48,9 +48,7 @@ const useRankings = (setting: SETTING_RANKINGS, trackedRef: REF): RETURN => {
 
     const timeout = setTimeout(async () => {
       try {
-        const { contracts } = await AlchemyAPI.getContractMetadataBatch<CONTRACT_METADATA>(
-          contractAddresses
-        )
+        const { contracts } = await AlchemyAPI.getContractMetadataBatch(contractAddresses)
         const rankingsData = merging(collectionsVolume.result, contracts)
         setRankings(prevRankings => [...prevRankings, ...rankingsData])
       } catch (error) {
@@ -77,11 +75,7 @@ const useRankings = (setting: SETTING_RANKINGS, trackedRef: REF): RETURN => {
         setIsLoading(() => true)
 
         try {
-          const collVolume = await RaribleAPI.getNFTCollectionsvolume<VOLUME_RESULT>(
-            period,
-            limit,
-            continuation
-          )
+          const collVolume = await RaribleAPI.getNFTCollectionsvolume(period, limit, continuation)
           setCollectionsVolume(() => collVolume)
         } catch (error) {
           setError(() => String(error))

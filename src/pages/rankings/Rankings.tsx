@@ -10,8 +10,8 @@ const Rankings: FC = () => {
 
   return (
     <main className={cn['rankings']}>
-      <div className='container'>
-        <h2 className='text-work-h2'>Top Collections</h2>
+      <div className={cn['container']}>
+        <h2 className={[cn['rankings__title'], 'text-work-h2'].join(' ')}>Top Collections</h2>
         <h5 className={cn['rankings__subtitle']}>
           Check out top ranking NFT collections on the NFT Marketplace.
         </h5>

@@ -1,18 +1,19 @@
 import ky from 'ky'
+import { CONTRACT_METADATA } from '../types/apiTypes/alchemyTypes'
 
 const KEY = 'XhMoskC0anQy5MV8fNHTGgDiaHjaWOaj'
 const baseURL = 'https://eth-mainnet.g.alchemy.com/nft/v3' + '/' + KEY
 
 export default class AlchemyAPI {
-  static async getContractMetadataBatch<T>(
+  static async getContractMetadataBatch(
     contractAddresses: string[]
-  ): Promise<{ contracts: T[] }> {
+  ): Promise<{ contracts: CONTRACT_METADATA[] }> {
     const event = 'getContractMetadataBatch'
     const url = `${baseURL}/${event}`
 
     const body = JSON.stringify({ contractAddresses })
 
-    const data: { contracts: T[] } = await ky.post(url, { body }).json()
+    const data: { contracts: CONTRACT_METADATA[] } = await ky.post(url, { body }).json()
     return data
   }
 

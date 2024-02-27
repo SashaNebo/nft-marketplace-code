@@ -7,7 +7,7 @@ import FooterContent from './FooterContent'
 const Footer: FC = () => {
   return (
     <footer className={cn['footer']}>
-      <div className={cn['container']}>
+      <div className={'container'}>
         <div className={cn['footer__wrapper']}>
           <FooterContent />
         </div>

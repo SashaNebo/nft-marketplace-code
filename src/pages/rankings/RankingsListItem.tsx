@@ -27,13 +27,15 @@ const RankingsListItem: FC<PROPS> = ({ ranking, number }) => {
           <div className={cn['collection__avatar']}>
             <img src={logoUrl} />
           </div>
-          <div className='text-work-h5'>{collectionName}</div>
+          <div className={[cn['collection__name'], 'text-work-h5'].join(' ')}>{collectionName}</div>
         </Link>
       </div>
       <div className={cn['stats']}>
-        <div className='stats__sold text-space-body'>{floorPriceValue}</div>
-        <div className={[cn[percentColor], 'text-space-body'].join(' ')}>{percentValue}</div>
-        <div className='stats__volume text-space-body'>{volumeETH} ETH</div>
+        <div className={[cn['stats__sold'], 'text-space-body'].join(' ')}>{floorPriceValue}</div>
+        <div className={[cn[percentColor], cn['stats__percent'], 'text-space-body'].join(' ')}>
+          {percentValue}
+        </div>
+        <div className={[cn['stats__volume'], 'text-space-body'].join(' ')}>{volumeETH} ETH</div>
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import cn from './Header.module.scss'
 import HeaderNav from './HeaderNav'
 import { spritePath } from '../../helpers/imgPath'
+import HeaderNavBar from './HeaderNavBar'
 
 const Header: FC = () => {
   return (
@@ -19,6 +20,7 @@ const Header: FC = () => {
         </Link>
 
         <HeaderNav />
+        <HeaderNavBar />
       </div>
     </header>
   )

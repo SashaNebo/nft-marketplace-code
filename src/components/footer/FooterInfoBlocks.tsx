@@ -64,7 +64,14 @@ export const InfoBlockJoin: FC = () => {
       </a>
       <form className={cn['subscribe']}>
         <input className={cn['subscribe__input']} type='text' placeholder='Enter your email here' />
-        <Button type='primary' size='lg' text='Subscribe' />
+        <Button type='primary' size='lg' text='Subscribe' className={cn['button__primary1']} />
+        <Button
+          type='primary'
+          size='md'
+          text='Subscribe'
+          icon='message'
+          className={cn['button__primary2']}
+        />
       </form>
     </div>
   )

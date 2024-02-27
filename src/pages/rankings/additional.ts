@@ -1,6 +1,6 @@
 import { PERIOD, PERIOD_CASES } from '../../types/apiTypes/raribleTypes'
 
-const periodList: { id: PERIOD_CASES; text: string }[] = [
+const periodListDesktop: { id: PERIOD_CASES; text: string }[] = [
   {
     id: PERIOD.today,
     text: 'Today',
@@ -12,6 +12,25 @@ const periodList: { id: PERIOD_CASES; text: string }[] = [
   {
     id: PERIOD.mounth,
     text: 'This Month',
+  },
+  {
+    id: PERIOD.all,
+    text: 'All Time',
+  },
+]
+
+const periodListMobile: { id: PERIOD_CASES; text: string }[] = [
+  {
+    id: PERIOD.today,
+    text: '1d',
+  },
+  {
+    id: PERIOD.week,
+    text: '7d',
+  },
+  {
+    id: PERIOD.mounth,
+    text: '30d',
   },
   {
     id: PERIOD.all,
@@ -40,4 +59,4 @@ const percentState = (percentValue: string): string[] => {
   return percentVariants[PI]
 }
 
-export { periodList, percentState }
+export { periodListDesktop, periodListMobile, percentState }

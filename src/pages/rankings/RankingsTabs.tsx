@@ -2,7 +2,7 @@ import { FC } from 'react'
 import clsx from 'clsx'
 
 import cn from './Rankings.module.scss'
-import { periodList } from './additional'
+import { periodListDesktop, periodListMobile } from './additional'
 import { PERIOD_CASES } from '../../types/apiTypes/raribleTypes'
 
 type PROPS = {
@@ -11,6 +11,8 @@ type PROPS = {
 }
 
 const RankingsTabs: FC<PROPS> = ({ period, setPeriod }) => {
+  const periodList = window.innerWidth > 834 ? periodListDesktop : periodListMobile
+
   return (
     <div className={cn['tabs']}>
       {periodList.map(({ id, text }) => (

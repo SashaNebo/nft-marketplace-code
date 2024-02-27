@@ -7,11 +7,14 @@ import { SETTING_TC } from '../../types/componentsTypes/topCollectionsTypes.ts'
 import { PERIOD } from '../../types/apiTypes/raribleTypes.ts'
 import ErrorMessage from '../error/ErrorMessage.tsx'
 import TopCollectionsListItem from './TopCollectionsListItem.tsx'
+import Button from '../UI/button/Button.tsx'
+import { Link } from 'react-router-dom'
 
 const TopCollectionsList: FC = () => {
+  const limit = window.innerWidth > 1280 ? 12 : 6
   const setting: SETTING_TC = {
     period: PERIOD.mounth,
-    limit: 12,
+    limit,
   }
 
   const [topCollections, isLoading, error] = useTopCollections(setting)
@@ -33,6 +36,15 @@ const TopCollectionsList: FC = () => {
       </div>
 
       {error && <ErrorMessage errorMessage={error} />}
+      <Link className={cn['top-collections__bottom-link']} to={'/rankings'}>
+        <Button
+          className={cn['top-collections__header-button']}
+          type='secondary'
+          size='lg'
+          icon='rocketLaunch'
+          text='View Rankings'
+        />
+      </Link>
     </>
   )
 }
